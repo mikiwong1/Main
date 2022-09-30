@@ -3,18 +3,23 @@ import java.text.DecimalFormat;
 
 public class Main {
     public static void main(String[] args) {
+
+        // introduces Scanner and DecimalFormat
         Scanner scan = new Scanner(System.in);
         DecimalFormat formatter = new DecimalFormat("#.##");
 
+        // asks questions for the user to input answers
         System.out.println("Welcome to the tip calculator!");
         System.out.print("How many people are in your group? ");
         int numOfPeople = scan.nextInt();
         System.out.print("What's the tip percentage (0 - 100): ");
         int tipPercentage = scan.nextInt();
 
+        // declares price and bill variable
         double price = 0;
         double totalBill = 0;
 
+        // adds all the prices inputted together
         while (price != -1.0) {
             System.out.print("Enter a cost in dollars and cents, e.g. 12.50 (-1 to end): ");
             price = scan.nextDouble();
@@ -27,6 +32,7 @@ public class Main {
 
         }
 
+        // prints out all the information
         System.out.println("------------------------------");
         System.out.println("Total Bill Before Tip: " + (formatter.format(totalBill)));
         System.out.println("Tip Percentage: " + (formatter.format(tipPercentage)));
